@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let no1=0;
+    let op1="";
+
+        function fun1(no)
+        {
+            document.getElementById("txtno").value+=no;
+        }
+
+        function plusminus()
+        {
+          document.getElementById("txtno").value = (-1*(document.getElementById("txtno").value));
+        }
+        function funClear()
+        {
+          document.getElementById("txtno").value="";
+        }
+        function funReciprocal()
+        {
+          let a = document.getElementById("txtno").value;
+          if(a=="")
+        {
+          document.getElementById("txtno").value="";
+        }
+        else {
+          document.getElementById("txtno").value=1/a;
+          }
+        }
+        function Square()
+        {
+          let d = document.getElementById("txtno").value;
+          document.getElementById("txtno").value=(d*d);
+        }
+
+
+          function operator(x)
+          {
+            no1=document.getElementById("txtno").value;
+            op1=x;
+              document.getElementById("txtno").value="";
+          }
+          function equal()
+          {
+            no2=document.getElementById("txtno").value;
+
+            if(op1=="+")
+            {
+              document.getElementById("txtno").value= parseInt(no1)+parseInt(no2);
+            }
+            else if(op1=="-")
+            {
+                document.getElementById("txtno").value= parseInt(no1)-parseInt(no2);
+            }
+            else if(op1=="*")
+            {
+              document.getElementById("txtno").value= parseInt(no1)*parseInt(no2);
+            }
+            else if(op1=="/")
+            {
+                document.getElementById("txtno").value= parseInt(no1)/parseInt(no2);
+            }
+          }
+
+
+    </script>
+    <style>
+
+
+        .a
+        {
+               font-size:large;
+               color:blue ;
+        }
+
+        .b
+        {
+            font-size:large;
+               color:blue ;
+               background-color: cyan;
+        }
+
+    </style>
+    <form name="frm1">
+        <table width="50%" cellspacing="10">
+            <tr>
+                <th colspan="4"><input type="text" id="txtno" class="a"></th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button"value="     1     " onclick="fun1(1);" id="btans1"  class="b">
+                </td>
+                <td>
+                    <input type="button"value="     2     " onclick="fun1(2);" id="btans2" class="b" >
+                </td>
+                <td>
+                    <input type="button"value="     3     " onclick="fun1(3);" id="btans3" class="b">
+                </td>
+                <td>
+                    <input type="button"value="     +     " id="btans+" onclick="operator('+');" class="b">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="     4     " onclick="fun1(4);" id="btans4" class="b">
+                </td>
+                <td>
+                    <input type="button" value="     5     " onclick="fun1(5);" id="btans5" class="b">
+                </td>
+                <td>
+                    <input type="button" value="     6     " onclick="fun1(6);" id="btans6" class="b">
+                </td>
+                <td>
+                    <input type="button" value="     -     " id="btans-" onclick="operator('-');" class="b">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="     7     " onclick="fun1(7);" id="btans7" class="b">
+                </td>
+                <td>
+                    <input type="button" value="     8     " onclick="fun1(8);" id="btans8" class="b">
+                </td>
+                <td>
+                    <input type="button" value="     9     " onclick="fun1(9);" id="btans9" class="b">
+                </td>
+                <td>
+                    <input type="button" value="     *     " id="btans*"onclick="operator('*');" class="b">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="     0     " onclick="fun1(0)" id="btans0" class="b">
+                </td>
+                <td>
+                    <input type="button" value="     .     " onlick="fun1(.)" id="btans." class="b">
+                </td>
+                <td>
+                    <input type="button" value="     =     " onclick="equal();" id="btans=" class="b">
+                </td>
+                <td>
+                    <input type="button" value="     /     " id="btans/"onclick="operator('/');" class="b">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="     C     " onclick="funClear();" id="btansC" class="b">
+                </td>
+                <td>
+                    <input type="button" value="    1/x   " onclick="funReciprocal();" id="btans1/x" class="b">
+                </td>
+                <td>
+                    <input type="button" value="    x^2    " onclick="Square();" id="btansx^2" class="b">
+                </td>
+                <td>
+                    <input type="button" value="    +/-    " id="btans+/-" class="b" onclick="plusminus();">
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+    </form>
+</body>
+</html>
